@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>Myyrmäen leipomo</title>
+
+
+
+
+<link href="tyyli.css" rel="stylesheet">
+
+<style>
+    img {width:100%; /*suhteellinen */
+    max-width:500px;}  /*maksimi koko*/
+    footer {clear:both;
+    }
+    /* mobiilinäkymä */
+    @media (max-width:600px) {
+        .osa1, .osa2 {width:100%;}
+     }
+</style>
+</head> 
+<body>  
+    <img src="leipomologo.png" alt="Myyrmäen leipomologo" class="logo" >
+    <nav>
+   <a href="myyrmaenleipomo.html" >Etusivu </a>
+<a href="tarinameista.html"  >Tarina meistä</a>
+<a href="leivonnaiset.html"  >Leivonnaiset</a>
+<a href="teetilaus.html"class="active">Tee tilaus</a>
+    </nav>
+    <main>
+        <header>
+    <h1>Tee tilaus</h1>
+        <form onsubmit="lahetatilaus(); return false;">
+        <label>Teidän sähköposti:</label>
+        <input type="text" id="sahkoposti" size="20">  
+
+    <label> Tilaus </label>
+          <textarea id="tilaus"
+        placeholder="Kirjoittakaa tilauksenne ja mahdolliset muutos toiveet tänne:"></textarea><br>
+        <input type="submit" value="Lähetä tilaus" style="margin-bottom: 80px;">
+    </form>
+
+<script>
+function lahetatilaus() {
+    const email = document.getElementById("sahkoposti").value;
+    const tilaus = document.getElementById("tilaus").value;
+
+    if (email === "" || tilaus === "") {
+        alert("Täytä sekä sähköposti että tilaus!");
+        return;
+    }
+
+    if (confirm("Tilaus on lähetetty!")) {
+        console.log("tilaus käsitelty");
+    }
+}
+</script>
+
+
+
+ 
+              <footer>&copy; Anastacia </footer>
+             </main>
+             
+</body> 
+</html> 
